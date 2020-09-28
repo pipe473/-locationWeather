@@ -14,7 +14,24 @@
 <body>
     
     <div>
-      <h1>Ciudades</h1>
+      <h1>Clima</h1>
+      <form>
+        <div class="form-group row">
+          <!-- <label for="staticEmail" class="col-sm-12 col-form-label">Ciudad</label> -->
+          <div class="col-sm-4">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="" placeholder="Escribe nombre ciudad">
+          </div>
+          <!-- <span for="staticEmail" class="col-sm-12 col-form-span">País</span> -->
+          <div class="col-sm-4">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="" placeholder="Escribe nombre país">
+          </div>
+          <!-- <span for="staticEmail" class="col-sm-12 col-form-span">Código</span> -->
+          <div class="col-sm-4">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="" placeholder="Escribe código país">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-warning mb-2">Buscar</button>
+      </form>
       <div *ngIf="ciudades.length === 0">
         <p>No hay ciudades para ver!</p>
     </div>

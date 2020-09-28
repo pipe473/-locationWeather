@@ -1,8 +1,45 @@
 .main-list{
     list-style: none;
+    margin-right: 5%;
+}
+
+body > div > h1{
+    margin-left: 5%;
+    padding-bottom: 2%;
+    color: #337ab7;
 }
 
 .miClase{
-    background: rgb(62, 62, 165);
+    background: #337ab7;
     color: white;
+}
+
+body > div > form > div{
+    display: flex;
+    flex-direction: row;
+}
+
+body > div > form{
+    display: flex;
+    flex-direction: column;
+}
+
+body > div > form > button{
+    width: 19%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+#staticEmail{
+    width: 70%;
+    text-align: center;
+}
+
+body > div > form > div > div:nth-child(1){
+    margin-left: 10%;
+}
+
+body > div > form > div > div:nth-child(3){
+    margin-right: 5%;
 }
