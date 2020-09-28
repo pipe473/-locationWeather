@@ -12,10 +12,10 @@ export class CiudadesComponent implements OnInit {
 
   constructor(){
     this.ciudades = [
-      new Ciudad ('Madrid', 'España', 'SP'),
+      new Ciudad ('Madrid', 'España', 'MAD'),
       new Ciudad ('Cali', 'Colombia', 'CL'),
-      new Ciudad ('Barcelona', 'España', 'BC'),
-      new Ciudad ('Florencia', 'Italia', 'IT')
+      new Ciudad ('Barcelona', 'España', 'BCN'),
+      new Ciudad ('Florencia', 'Italia', 'FL')
     ]
   }
   ngOnInit(): void {

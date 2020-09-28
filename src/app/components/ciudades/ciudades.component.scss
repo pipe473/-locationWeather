@@ -1,6 +1,23 @@
 .main-list{
     list-style: none;
-    margin-right: 5%;
+    margin-left: 5%;
+    width: 91%;
+}
+
+label {
+    color: #337ab7;
+}
+
+th{
+    color: #337ab7;
+}
+
+// td{
+//     color: #337ab7;
+// }
+
+::placeholder{
+    color: #337ab7;
 }
 
 body > div > h1{
@@ -26,7 +43,7 @@ body > div > form{
 
 body > div > form > button{
     width: 19%;
-    margin-left: 10%;
+    margin-left: 11%;
     margin-top: 2%;
     margin-bottom: 4%;
 }
