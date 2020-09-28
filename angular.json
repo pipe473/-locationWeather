@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cityLocationApp"
+    }
+  },
+  "defaultProject": "cityLocationApp",
+  "cli": {
+    "analytics": "5522a09c-6538-4e29-8bfb-c607032b62af"
+  }
 }
