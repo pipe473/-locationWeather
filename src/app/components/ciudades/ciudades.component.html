@@ -28,6 +28,7 @@
                     <th scope="col">Codigo</th>
                   </tr>
                 </thead>
+                <!-- <tbody *ngFor="let ciudad of ciudades; let even = even" [ngClass]="{'miClase' : even}"> -->
                 <tbody *ngFor="let ciudad of ciudades; let i = index" [ngClass]="i%2 === 0 ? 'miClase' : '' ">
                   <tr>
                     <td>{{ ciudades[i].ciudad }}</td>
