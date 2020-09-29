@@ -9,8 +9,15 @@ import { Clima } from 'src/app/models/clima';
 })
 export class CiudadesComponent implements OnInit {
   public ciudades: Ciudad[];
+  public miCiudad: Ciudad;
+  public isHidden: boolean;
+  public resultado: string;
+  public indice: number;
 
   constructor() {
+    this.indice = 0;
+    this.miCiudad = null;
+    this.isHidden = false;
     this.ciudades = [
       new Ciudad('Madrid', 'España', 'MAD', new Clima(20, 200, 60)),
       new Ciudad('Cali', 'Colombia', 'CL', new Clima(20, 200, 60)),
@@ -18,7 +25,7 @@ export class CiudadesComponent implements OnInit {
     ];
   }
 
-  // FUNCION QUE ME CREA UN  NUEVO CLIMA
+  // FUNCION QUE ME CREA UN NUEVO CLIMA
   dataWeight(
     ciudad: HTMLInputElement,
     pais: HTMLInputElement,
@@ -42,5 +49,24 @@ export class CiudadesComponent implements OnInit {
     return ciudadNueva;
     // console.log(this.ciudades);
   }
+
+  // METODO PARA MOSTRAR TODA LA INFORMACION
+
+  showInfo(index: Number) {
+    this.indice = Number(index);
+    this.isHidden = true;
+    this.resultado = `Ciudad: ${this.ciudades[Number(index)].ciudad} |
+                      País: ${this.ciudades[Number(index)].pais} |
+                      Código: ${this.ciudades[Number(index)].codigo} |
+                      Temperatura: ${this.ciudades[Number(index)].clima.temperatura}Cº |
+                      Viento: ${this.ciudades[Number(index)].clima.viento}Km/h |
+                      Precipitaciones: ${this.ciudades[Number(index)].clima.precipitraciones}`;
+
+    // console.log (this.ciudades[Number(index)].clima);
+    // console.log (this.ciudades[Number(index)].ciudad);
+
+    return this.resultado;
+  }
+
   ngOnInit(): void {}
 }

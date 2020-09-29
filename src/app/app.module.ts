@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CiudadesComponent } from './components/ciudades/ciudades.component';
+import { CiudadesPipe } from './pipes/ciudades.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CiudadesComponent
+    CiudadesComponent,
+    CiudadesPipe
   ],
   imports: [
     BrowserModule,

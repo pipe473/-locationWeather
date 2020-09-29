@@ -14,6 +14,7 @@
   <body>
     <div>
       <h1>Clima</h1>
+
       <form>
         <div class="form-row">
           <div class="form-group col-md-4">
@@ -48,43 +49,52 @@
           </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputTemperatura">Temperatura</label>
-              <input
-                #temperatura
-                type="temperatura"
-                class="form-control"
-                id="inputTemperatura"
-                placeholder="Escribe una temperatura"
-              />
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputViento">Viento</label>
-              <input
-                #viento
-                type="viento"
-                class="form-control"
-                id="inputViento"
-                placeholder="Escribe el viento"
-              />
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPrecipitaciones">Precipitaciones</label>
-              <input
-                #precipitaciones
-                type="precipitaciones"
-                class="form-control"
-                id="inputPrecipitaciones"
-                placeholder="Escribe precipitaciones"
-              />
-            </div>
+          <div class="form-group col-md-4">
+            <label for="inputTemperatura">Temperatura</label>
+            <input
+              #temperatura
+              type="temperatura"
+              class="form-control"
+              id="inputTemperatura"
+              placeholder="Escribe una temperatura"
+            />
           </div>
+          <div class="form-group col-md-4">
+            <label for="inputViento">Viento</label>
+            <input
+              #viento
+              type="viento"
+              class="form-control"
+              id="inputViento"
+              placeholder="Escribe el viento"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPrecipitaciones">Precipitaciones</label>
+            <input
+              #precipitaciones
+              type="precipitaciones"
+              class="form-control"
+              id="inputPrecipitaciones"
+              placeholder="Escribe precipitaciones"
+            />
+          </div>
+        </div>
         <button
-          (click)="dataWeight(ciudad,pais,codigo,temperatura,viento,precipitaciones)"
+          (click)="
+            dataWeight(
+              ciudad,
+              pais,
+              codigo,
+              temperatura,
+              viento,
+              precipitaciones
+            )
+          "
           type="button"
           class="btn btn-warning mb-2"
         >
-          Buscar
+          Añadir
         </button>
       </form>
       <div *ngIf="ciudades.length === 0">
@@ -106,14 +116,31 @@
               [ngClass]="i % 2 === 0 ? 'miClase' : ''"
             >
               <tr>
-                <td>{{ ciudades[i].ciudad }}</td>
+                <td type="button" (click)="showInfo(i)">
+                  {{ ciudades[i].ciudad }}
+                </td>
                 <td>{{ ciudades[i].pais }}</td>
                 <td>{{ ciudades[i].codigo }}</td>
               </tr>
             </tbody>
+            <!-- <div *ngIf="isHidden == true"  class="alert alert-primary col-md-12" role="alert">
+                {{ resultado | city }}
+              </div> -->
+              
+            <!-- <div *ngIf="isHidden == true" class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">{{ resultado | city }}</p>
+              </div>
+            </div> -->
           </table>
         </li>
       </ul>
+      <div *ngIf="isHidden == true" class="alert alert-info" role="alert">
+        <h4 class="alert-heading">El tiempo:</h4>
+        <p>{{ resultado | city }}</p>
+        <!-- <hr>
+        <p class="mb-0">{{ resultado | city }}</p> -->
+      </div>
     </div>
   </body>
 </html>
