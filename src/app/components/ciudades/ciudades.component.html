@@ -1,61 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous"
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
     />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div>
       <h1>Clima</h1>
       <form>
         <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputCiudad">Ciudad</label>
-              <input #ciudad type="ciudad" class="form-control" id="inputCiudad" placeholder="Escribe una ciudad" >
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputPais">País</label>
-              <input #pais type="pais" class="form-control" id="inputPais" placeholder="Escribe un país" value="pais">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputCodigo">Código</label>
-                <input #codigo type="codigo" class="form-control" id="inputCodigo" placeholder="Escribe un país" value="codigo">
-              </div>
+          <div class="form-group col-md-4">
+            <label for="inputCiudad">Ciudad</label>
+            <input
+              #ciudad
+              type="ciudad"
+              class="form-control"
+              id="inputCiudad"
+              placeholder="Escribe una ciudad"
+            />
           </div>
-        <button (click)=dataWeight() type="submit" class="btn btn-warning mb-2">Buscar</button>
+          <div class="form-group col-md-4">
+            <label for="inputPais">País</label>
+            <input
+              #pais
+              type="pais"
+              class="form-control"
+              id="inputPais"
+              placeholder="Escribe un país"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCodigo">Código</label>
+            <input
+              #codigo
+              type="codigo"
+              class="form-control"
+              id="inputCodigo"
+              placeholder="Escribe un país"
+            />
+          </div>
+        </div>
+        <button
+          (click)=dataWeight(ciudad,pais,codigo)
+          type="submit"
+          class="btn btn-warning mb-2"
+        >
+          Buscar
+        </button>
       </form>
       <div *ngIf="ciudades.length === 0">
         <p>No hay ciudades para ver!</p>
-    </div>
+      </div>
       <ul class="main-list">
-        <li >
-            <table class="table">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">Pais</th>
-                    <th scope="col">Codigo</th>
-                  </tr>
-                </thead>
-                <!-- <tbody *ngFor="let ciudad of ciudades; let even = even" [ngClass]="{'miClase' : even}"> -->
-                <tbody *ngFor="let ciudad of ciudades; let i = index" [ngClass]="i%2 === 0 ? 'miClase' : '' ">
-                  <tr>
-                    <td>{{ ciudades[i].ciudad }}</td>
-                    <td>{{ ciudades[i].pais }}</td>
-                    <td>{{ ciudades[i].codigo }}</td>
-                  </tr>
-                </tbody>
-              </table>
+        <li>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Pais</th>
+                <th scope="col">Codigo</th>
+              </tr>
+            </thead>
+            <!-- <tbody *ngFor="let ciudad of ciudades; let even = even" [ngClass]="{'miClase' : even}"> -->
+            <tbody
+              *ngFor="let ciudad of ciudades; let i = index"
+              [ngClass]="i % 2 === 0 ? 'miClase' : ''"
+            >
+              <tr>
+                <td>{{ ciudades[i].ciudad }}</td>
+                <td>{{ ciudades[i].pais }}</td>
+                <td>{{ ciudades[i].codigo }}</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
       </ul>
     </div>
-</body>
+  </body>
 </html>
