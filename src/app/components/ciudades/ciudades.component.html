@@ -19,18 +19,18 @@
         <div class="form-row">
             <div class="form-group col-md-4">
               <label for="inputCiudad">Ciudad</label>
-              <input type="ciudad" class="form-control" id="inputCiudad" placeholder="Escribe una ciudad">
+              <input #ciudad type="ciudad" class="form-control" id="inputCiudad" placeholder="Escribe una ciudad" >
             </div>
             <div class="form-group col-md-4">
               <label for="inputPais">País</label>
-              <input type="pais" class="form-control" id="inputPais" placeholder="Escribe un país">
+              <input #pais type="pais" class="form-control" id="inputPais" placeholder="Escribe un país" value="pais">
             </div>
             <div class="form-group col-md-4">
                 <label for="inputCodigo">Código</label>
-                <input type="codigo" class="form-control" id="inputCodigo" placeholder="Escribe código">
+                <input #codigo type="codigo" class="form-control" id="inputCodigo" placeholder="Escribe un país" value="codigo">
               </div>
           </div>
-        <button type="submit" class="btn btn-warning mb-2">Buscar</button>
+        <button (click)=dataWeight() type="submit" class="btn btn-warning mb-2">Buscar</button>
       </form>
       <div *ngIf="ciudades.length === 0">
         <p>No hay ciudades para ver!</p>

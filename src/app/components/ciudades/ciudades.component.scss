@@ -1,62 +1,59 @@
-.main-list{
-    list-style: none;
-    margin-left: 5%;
-    width: 91%;
+html {
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-    color: #337ab7;
+  color: #337ab7;
 }
 
-th{
-    color: #337ab7;
+th {
+  color: #337ab7;
 }
 
-// td{
-//     color: #337ab7;
-// }
-
-::placeholder{
-    color: #337ab7;
+.main-list {
+  list-style: none;
+  margin-left: 5%;
+  width: 91%;
 }
 
-body > div > h1{
-    margin-left: 5%;
-    padding-bottom: 2%;
-    color: #337ab7;
+body > div > h1 {
+  margin-left: 5%;
+  padding-bottom: 2%;
+  color: #337ab7;
 }
 
-.miClase{
-    background: #337ab7;
-    color: white;
+.miClase {
+  background: #337ab7;
+  color: white;
 }
 
-body > div > form > div{
-    display: flex;
-    flex-direction: row;
+body > div > form > div {
+  display: flex;
+  flex-direction: row;
 }
 
-body > div > form{
-    display: flex;
-    flex-direction: column;
+body > div > form {
+  display: flex;
+  flex-direction: column;
 }
 
-body > div > form > button{
-    width: 19%;
-    margin-left: 11%;
-    margin-top: 2%;
-    margin-bottom: 4%;
+body > div > form > button {
+  width: 19%;
+  margin-left: 11%;
+  margin-top: 2%;
+  margin-bottom: 4%;
 }
 
-#staticEmail{
-    width: 70%;
-    text-align: center;
+#staticEmail {
+  width: 70%;
+  text-align: center;
 }
 
-body > div > form > div > div:nth-child(1){
-    margin-left: 10%;
+body > div > form > div > div:nth-child(1) {
+  margin-left: 10%;
 }
 
-body > div > form > div > div:nth-child(3){
-    margin-right: 5%;
+body > div > form > div > div:nth-child(3) {
+  margin-right: 5%;
 }
